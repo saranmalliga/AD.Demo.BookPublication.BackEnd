@@ -1,5 +1,7 @@
 ﻿using AD.Demo.BookPublication.Domain.AutoMapper;
+using AD.Demo.BookPublication.Domain.DTO;
 using AD.Demo.BookPublication.Domain.Interfaces;
+using AD.Demo.BookPublication.ElasticSearch.Infrastructure.Repositories;
 using AD.Demo.BookPublication.Interfaces.Interfaces;
 using AD.Demo.BookPublication.Services;
 using AD.Demo.BookPublication.Services.BusinessServices;
@@ -9,6 +11,7 @@ using AutoMapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Nest;
 using SD.BuildingBlocks.Infrastructure;
 using System.Data;
 
@@ -24,6 +27,7 @@ namespace AD.Demo.BookPublication.Api.DependencyConfig
         {
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookRepositoryES, BookRepositoryES>();
         }
 
         public static void AddMapper(this IServiceCollection services)
@@ -43,6 +47,24 @@ namespace AD.Demo.BookPublication.Api.DependencyConfig
             services.AddTransient<IDbConnection>(c => new SqlConnection(connectionString));
         }
 
-
+        public static void AddElasticSearch(this IServiceCollection services, IConfiguration configuration)
+        {
+            var baseUrl = configuration["ElasticSettings:baseUrl"];
+            var index = configuration["ElasticSettings:defaultIndex"];
+            var settings = new ConnectionSettings(new Uri(baseUrl ?? "")).PrettyJson().CertificateFingerprint("6b6a8c2ad2bc7b291a7363f7bb96a120b8de326914980c868c1c0bc6b3dc41fd").BasicAuthentication("elastic", "JbNb_unwrJy3W0OaZ07n").DefaultIndex(index);
+            settings.EnableApiVersioningHeader();
+            AddDefaultMappings(settings);
+            var client = new ElasticClient(settings);
+            services.AddSingleton<IElasticClient>(client);
+            CreateIndex(client, index);
+        }
+        private static void AddDefaultMappings(ConnectionSettings settings)
+        {
+            settings.DefaultMappingFor<BookDTO>(m=> m);
+        }
+        private static void CreateIndex(IElasticClient client, string indexName)
+        {
+            var createIndexResponse = client.Indices.Create(indexName, index => index.Map<BookDTO>(x => x.AutoMap()));
+        }
     }
 }

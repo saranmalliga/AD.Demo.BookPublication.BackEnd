@@ -21,7 +21,7 @@ namespace AD.Demo.BookPublication.Domain.DTO
     public class BookSearchResponse
     {
         public IEnumerable<BookDTO> Result { get; set; }
-        public int TotalRows { get; set; }
+        public long TotalRows { get; set; }
 
     }
     public class BookImportResponse

@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.Api", "AD.Demo.BookPublication.Api\AD.Demo.BookPublication.Api.csproj", "{300289C9-31F9-4509-B1F5-D652F7FBA17E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.Api", "AD.Demo.BookPublication.Api\AD.Demo.BookPublication.Api.csproj", "{300289C9-31F9-4509-B1F5-D652F7FBA17E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{BA124342-1EF1-4280-BCCB-B6BA290BF20A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{ABC16589-B327-4D45-983D-6CD287142C0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.DB", "AD.Demo.BookPublication.DB\AD.Demo.BookPublication.DB.csproj", "{07A062D1-B066-4158-8681-F31C59F70F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.DB", "AD.Demo.BookPublication.DB\AD.Demo.BookPublication.DB.csproj", "{07A062D1-B066-4158-8681-F31C59F70F35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AA5F543A-55F7-427B-AD5E-C8E0632F00D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.Domain", "AD.Demo.BookPublication.Domain\AD.Demo.BookPublication.Domain.csproj", "{AE09199E-E801-4789-B690-FBF0F650C333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.Domain", "AD.Demo.BookPublication.Domain\AD.Demo.BookPublication.Domain.csproj", "{AE09199E-E801-4789-B690-FBF0F650C333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.SQL.Infrastructure", "AD.Demo.BookPublication.SQL.Infrastructure\AD.Demo.BookPublication.SQL.Infrastructure.csproj", "{AD0BC168-2B8C-467A-9114-726BDD7606D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.SQL.Infrastructure", "AD.Demo.BookPublication.SQL.Infrastructure\AD.Demo.BookPublication.SQL.Infrastructure.csproj", "{AD0BC168-2B8C-467A-9114-726BDD7606D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{542634EC-33F0-420E-94D8-4AA0958368BF}"
 EndProject
@@ -25,9 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{9BD62530-5E9E-40EC-83C1-860FA8EA7B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.Interfaces", "AD.Demo.BookPublication.Interfaces\AD.Demo.BookPublication.Interfaces.csproj", "{10E33412-CEE8-4A3A-A9F5-7A8E9CCE569D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.Interfaces", "AD.Demo.BookPublication.Interfaces\AD.Demo.BookPublication.Interfaces.csproj", "{10E33412-CEE8-4A3A-A9F5-7A8E9CCE569D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.Services", "AD.Demo.BookPublication.Services\AD.Demo.BookPublication.Services.csproj", "{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AD.Demo.BookPublication.Services", "AD.Demo.BookPublication.Services\AD.Demo.BookPublication.Services.csproj", "{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD.Demo.BookPublication.ElasticSearch.Infrastructure", "AD.Demo.BookPublication.ElasticSearch.Infrastructure\AD.Demo.BookPublication.ElasticSearch.Infrastructure.csproj", "{A0D7F9BC-8936-4E89-BDED-FE2630E8816E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D7F9BC-8936-4E89-BDED-FE2630E8816E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D7F9BC-8936-4E89-BDED-FE2630E8816E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D7F9BC-8936-4E89-BDED-FE2630E8816E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D7F9BC-8936-4E89-BDED-FE2630E8816E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{AD0BC168-2B8C-467A-9114-726BDD7606D3} = {542634EC-33F0-420E-94D8-4AA0958368BF}
 		{10E33412-CEE8-4A3A-A9F5-7A8E9CCE569D} = {77384CF1-9D9F-4DD1-9F7D-D6A95D469EF7}
 		{3EB0D60D-9B97-4ED0-9CC2-CE94BF4F594F} = {B841875A-EF27-4CB9-B77C-BC714D53394A}
+		{A0D7F9BC-8936-4E89-BDED-FE2630E8816E} = {542634EC-33F0-420E-94D8-4AA0958368BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4E71869-69BE-4CA0-8DD0-72FEE9B29B46}

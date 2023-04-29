@@ -18,7 +18,7 @@ builder.Services.AddDapper(builder.Configuration);
 builder.Services.AddMapper();
 builder.Services.AddRepositories();
 builder.Services.AddDataServices();
-//builder.Services.AddDbContext();
+builder.Services.AddElasticSearch(builder.Configuration);
 
 
 var app = builder.Build();

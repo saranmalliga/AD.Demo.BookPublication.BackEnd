@@ -16,7 +16,7 @@ namespace AD.Demo.BookPublication.SQL.Infrastructure.Utility
             { "isbn", "B.ISBN" }
         }; 
         public static string GetBookingListQuery(string whereClause = "", string orderBy = "B.TITLE", string orderDir = "ASC", int skip = 0, int take = 20) => @$"
-                                                          SELECT @TotalRows = COUNT(1) FROM [BMG].[BOOK] B WHERE B.[IS_ACTIVE] = 1 {whereClause};
+                                                          SELECT @TotalRows = COUNT(1) FROM  [BMG].[BOOK] B WHERE B.[IS_ACTIVE] = 1 {whereClause};
                                                           SELECT B.[ID] AS Id
                                                               ,B.[TITLE] AS Title
                                                               ,B.[AUTHOR] AS Author
