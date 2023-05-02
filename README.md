@@ -1,12 +1,14 @@
 # AD.Demo.BookPublication.BackEnd (API)
+
 API Application to List the books from SQL and Elastic Seach
 Also Exposed API to import books
 
-Technical Specification:
-Platform: DOTNET CORE API Framework(7.0)
-SQL: SQL Server 2014+
+## Technical Specifications
+Platform: DOTNET CORE API Framework(7.0), 
+SQL: SQL Server 2014+, 
 IDE: Visual Studio 2022
 
+## Screenshots
 API 1: 
 GET: /api/book/GetAllBooks
 ![image](https://user-images.githubusercontent.com/3121640/235319160-9cdd8025-e879-4be2-a259-4c51d5057ef8.png)
