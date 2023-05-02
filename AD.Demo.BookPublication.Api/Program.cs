@@ -20,6 +20,14 @@ builder.Services.AddRepositories();
 builder.Services.AddDataServices();
 builder.Services.AddElasticSearch(builder.Configuration);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "DevEnvPolicy",
+                policy =>
+                {
+                    policy.AllowAnyOrigin().WithMethods("POST", "PUT", "DELETE", "GET");
+                });
+});
 
 var app = builder.Build();
 
@@ -29,7 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowAllOrigin");
+app.UseCors("DevEnvPolicy");
 app.UseAuthorization();
 
 app.MapControllers();

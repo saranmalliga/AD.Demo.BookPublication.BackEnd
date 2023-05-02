@@ -25,6 +25,7 @@ namespace AD.Demo.BookPublication.SQL.Infrastructure.Utility
                                                               ,B.[TOTAL_PAGES] AS TotalPages
                                                               ,B.[ISBN] AS ISBN
                                                               ,B.[PUBLISHED_YEAR] AS PublishedYear
+                                                              ,B.[BOOK_LANGUAGE] AS Language
                                                           FROM [BMG].[BOOK] B
                                                           WHERE B.[IS_ACTIVE] = 1
                                                           {whereClause}
